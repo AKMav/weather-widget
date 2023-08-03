@@ -1,9 +1,9 @@
 <template>
   <div class="weather-app">
     <AppHeader :header-title="'Weather widget'">
-      <div>1</div>
+      <SearchLocation />
     </AppHeader>
-    <WeatherList>
+    <WeatherList :list="[]">
       <template #default="{ title }">
         <WeatherCard :title="title" />
       </template>
@@ -12,9 +12,10 @@
 </template>
 
 <script setup lang="ts">
-import WeatherList from '@/shared/components/WeatherList'
+import WeatherList from '@/entities/WeatherList'
 import WeatherCard from '@/shared/components/WeatherCard'
 import AppHeader from '@/shared/components/AppHeader'
+import SearchLocation from '@/features/SearchLocation'
 
 // import { getWeatherByQuery } from '@/shared/api/GetWeatherByQuery'
 // import type { IResponse } from '@/shared/types'
