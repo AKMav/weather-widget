@@ -1,15 +1,3 @@
-// export interface IWeatherItem {
-//   id: number
-//   city: string
-//   country: string
-//   temp: number
-//   weather: {
-//     iconSrc: string
-//     main: string
-//     description: string
-//   }
-// }
-
 export interface IResponse {
   base: string
   clouds: {
