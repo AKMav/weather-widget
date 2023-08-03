@@ -5,7 +5,7 @@
         <SearchIcon class="search-location__icon"></SearchIcon>
         <input v-model.trim="query" class="search-location__input" />
       </span>
-      <LoaderUI v-if="loading" />
+      <LoaderUI v-if="loading" class="search-location__loader" />
       <button v-else class="search-location__apply-btn" @click="() => console.log(weatherItemData)">
         Add location
       </button>

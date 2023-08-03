@@ -1,7 +1,7 @@
 <template>
   <div class="weather-app">
     <AppHeader :header-title="'Weather widget'">
-      <SearchLocation />
+      <LocationAdd />
     </AppHeader>
     <WeatherList :list="[]">
       <template #default="{ title }">
@@ -16,7 +16,7 @@
 import WeatherList from '@/entities/WeatherList'
 import WeatherCard from '@/shared/components/WeatherCard'
 import AppHeader from '@/shared/components/AppHeader'
-import SearchLocation from '@/features/SearchLocation'
+import LocationAdd from '@/features/LocationAdd'
 import EmptyData from '@/shared/components/EmptyData'
 </script>
 
