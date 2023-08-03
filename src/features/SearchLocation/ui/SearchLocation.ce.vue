@@ -1,17 +1,33 @@
 <template>
   <div class="search-location">
-    <span class="search-location__wrapper">
-      <SearchIcon class="search-location__icon"></SearchIcon>
-      <input class="search-location__input" />
-    </span>
-    <LoaderUI v-if="false" />
-    <button v-else class="search-location__apply-btn">Apply</button>
+    <div class="search-location__container">
+      <span class="search-location__wrapper">
+        <SearchIcon class="search-location__icon"></SearchIcon>
+        <input v-model.trim="query" class="search-location__input" />
+      </span>
+      <LoaderUI v-if="loading" />
+      <button v-else class="search-location__apply-btn" @click="() => console.log(weatherItemData)">
+        Add location
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { watchDebounced } from '@vueuse/core'
 import SearchIcon from '@/shared/icons/SearchIcon'
 import LoaderUI from '@/shared/components/LoaderUI'
+import { useSearchLocation } from '../model'
+
+const { query, weatherItemData, loading, fetchWeather } = useSearchLocation()
+
+watchDebounced(
+  query,
+  (newQuery) => {
+    fetchWeather(newQuery)
+  },
+  { debounce: 750 }
+)
 </script>
 
 <style lang="scss">

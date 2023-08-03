@@ -1,13 +1,14 @@
 .search-location {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  width: 50%;
-  margin: 0 auto;
+  &__container {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
 
   &__wrapper {
     position: relative;
+    margin-right: auto;
   }
 
   &__input {
