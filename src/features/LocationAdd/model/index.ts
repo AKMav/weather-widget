@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { useWeatherList } from '@/entities/WeatherList'
-import type { IResponse, IWeatherItem } from '@/shared/types'
+import type { IResponse } from '@/shared/types'
 import { getWeatherByQuery } from '@/shared/api/GetWeatherByQuery'
 
 const query = ref('')
@@ -29,13 +29,7 @@ export const useSearchLocation = () => {
 
   const addFetchedItem = (payload: IResponse | null) => {
     if (payload) {
-      const itemBody: IWeatherItem = {
-        id: payload.id,
-        city: payload.name,
-        country: payload.sys.country,
-        temp: payload.main.temp
-      }
-      addWeatherItem(itemBody)
+      addWeatherItem(payload)
       weatherItemData.value = null
       query.value = ''
     }

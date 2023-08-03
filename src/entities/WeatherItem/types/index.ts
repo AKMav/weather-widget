@@ -1,5 +1,5 @@
-import type { IWeatherItem } from '@/shared/types'
+import type { IResponse } from '@/shared/types'
 
 export interface IProps {
-  item: IWeatherItem
+  item: IResponse
 }
