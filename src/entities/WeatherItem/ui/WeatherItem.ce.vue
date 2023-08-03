@@ -9,7 +9,7 @@
     <main class="weather-card__main">
       <div class="weather-card__row">
         <div class="weather-card__col">
-          <p class="weather-card__temp">{{ item.temp }}℃</p>
+          <p class="weather-card__temp">{{ item.temp.toFixed(1) }}℃</p>
         </div>
         <div class="weather-card__col"></div>
       </div>
