@@ -6,7 +6,7 @@ import { getWeatherByQuery } from '@/shared/api/GetWeatherByQuery'
 const query = ref('')
 const weatherItemData = ref<IResponse | null>(null)
 const loading = ref(false)
-const { addWeatherItem } = useWeatherList()
+const { addWeatherItem, weatherList } = useWeatherList()
 
 export const useSearchLocation = () => {
   const fetchWeather = async (query: string) => {
@@ -28,7 +28,7 @@ export const useSearchLocation = () => {
   }
 
   const addFetchedItem = (payload: IResponse | null) => {
-    if (payload) {
+    if (payload && weatherList.value.findIndex((item) => item.id === payload.id) === -1) {
       addWeatherItem(payload)
       weatherItemData.value = null
       query.value = ''
