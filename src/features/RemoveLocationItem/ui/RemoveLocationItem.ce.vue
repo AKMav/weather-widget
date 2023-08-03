@@ -1,5 +1,5 @@
 <template>
-  <button class="weather-card__close-btn" @click="removeWeatherItem(id)">
+  <button class="remove-location-item" @click="removeWeatherItem(id)">
     <TrashIcon />
   </button>
 </template>
