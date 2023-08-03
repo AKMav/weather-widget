@@ -8,6 +8,7 @@
         <WeatherCard :title="title" />
       </template>
     </WeatherList>
+    <EmptyData v-if="true" />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import WeatherList from '@/entities/WeatherList'
 import WeatherCard from '@/shared/components/WeatherCard'
 import AppHeader from '@/shared/components/AppHeader'
 import SearchLocation from '@/features/SearchLocation'
+import EmptyData from '@/shared/components/EmptyData'
 
 // import { getWeatherByQuery } from '@/shared/api/GetWeatherByQuery'
 // import type { IResponse } from '@/shared/types'
