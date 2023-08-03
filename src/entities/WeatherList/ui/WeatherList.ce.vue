@@ -1,17 +1,18 @@
 <template>
   <TransitionGroup name="list" tag="ul" class="weather-list">
-    <CardUI v-for="item in list" :key="item.id">
+    <CardUI v-for="item in weatherList" :key="item.id">
       <template #default>
-        <slot default :title="item.city" />
+        <slot default :item="item" />
       </template>
     </CardUI>
   </TransitionGroup>
 </template>
 
 <script setup lang="ts">
-import type { IProps } from '../types'
 import CardUI from '@/shared/components/CardUI'
-const props = defineProps<IProps>()
+import { useWeatherList } from '../model/list'
+
+const { weatherList } = useWeatherList()
 </script>
 
 <style lang="scss">

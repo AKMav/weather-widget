@@ -1,7 +1,26 @@
 import { ref } from 'vue'
 import type { IWeatherItem } from '@/shared/types'
 
-const weatherList = ref<IWeatherItem[]>([])
+const weatherList = ref<IWeatherItem[]>([
+  {
+    id: 1,
+    city: 'City',
+    country: 'Country',
+    temp: 20
+  },
+  {
+    id: 2,
+    city: 'City',
+    country: 'Country',
+    temp: 20
+  },
+  {
+    id: 3,
+    city: 'City',
+    country: 'Country',
+    temp: 20
+  }
+])
 
 export const useWeatherList = () => {
   const addWeatherItem = (payload: IWeatherItem) => {

@@ -1,5 +1,13 @@
 .weather-list {
-  // background-color: red;
+  margin: 0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  li {
+    padding: 0;
+  }
 }
 
 .list-enter-active,

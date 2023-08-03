@@ -6,7 +6,11 @@
         <input v-model.trim="query" class="search-location__input" />
       </span>
       <LoaderUI v-if="loading" class="search-location__loader" />
-      <button v-else class="search-location__apply-btn" @click="() => console.log(weatherItemData)">
+      <button
+        v-else-if="!loading && weatherItemData"
+        class="search-location__apply-btn"
+        @click="addFetchedItem(weatherItemData)"
+      >
         Add location
       </button>
     </div>
@@ -19,7 +23,7 @@ import SearchIcon from '@/shared/icons/SearchIcon'
 import LoaderUI from '@/shared/components/LoaderUI'
 import { useSearchLocation } from '../model'
 
-const { query, weatherItemData, loading, fetchWeather } = useSearchLocation()
+const { query, weatherItemData, loading, fetchWeather, addFetchedItem } = useSearchLocation()
 
 watchDebounced(
   query,
