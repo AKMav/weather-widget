@@ -1,10 +1,3 @@
-export interface IWeatherItem {
-  id: number
-  city: string
-  country: string
-  temp: number
-}
-
 export interface IResponse {
   base: string
   clouds: {

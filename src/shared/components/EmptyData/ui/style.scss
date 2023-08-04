@@ -1,0 +1,11 @@
+.empty-data {
+  display: flex;
+  justify-content: center;
+
+  &__title {
+    font-size: 16px;
+    max-width: 75%;
+    text-align: center;
+    color: var(--secondary);
+  }
+}

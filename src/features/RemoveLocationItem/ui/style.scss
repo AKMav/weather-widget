@@ -1,0 +1,24 @@
+.remove-location-item {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  display: flex;
+  padding: 10px;
+  margin: -10px;
+  cursor: pointer;
+  color: var(--text-muted);
+
+  &:hover {
+    color: var(--error);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(1.05);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}

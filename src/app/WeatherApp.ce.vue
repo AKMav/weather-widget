@@ -1,35 +1,30 @@
 <template>
   <div class="weather-app">
     <AppHeader :header-title="'Weather widget'">
-      <div>1</div>
+      <LocationAdd />
     </AppHeader>
-    <WeatherList>
-      <template #default="{ title }">
-        <WeatherCard :title="title" />
+    <WeatherList v-if="weatherList.length">
+      <template #default="{ item }">
+        <WeatherItem :item="item">
+          <template #close="{ id }">
+            <RemoveLocationItem :id="id" />
+          </template>
+        </WeatherItem>
       </template>
     </WeatherList>
+    <EmptyData v-else />
   </div>
 </template>
 
 <script setup lang="ts">
-import WeatherList from '@/shared/components/WeatherList'
-import WeatherCard from '@/shared/components/WeatherCard'
+import LocationAdd from '@/features/LocationAdd'
+import RemoveLocationItem from '@/features/RemoveLocationItem'
+import WeatherList, { useWeatherList } from '@/entities/WeatherList'
+import WeatherItem from '@/entities/WeatherItem'
 import AppHeader from '@/shared/components/AppHeader'
+import EmptyData from '@/shared/components/EmptyData'
 
-// import { getWeatherByQuery } from '@/shared/api/GetWeatherByQuery'
-// import type { IResponse } from '@/shared/types'
-
-// const getLondon = async () => {
-//   try {
-//     const res = await getWeatherByQuery('')
-//     if (res.ok) {
-//       const data: IResponse = await res.json()
-//       console.log(data)
-//     }
-//   } catch (err) {
-//     console.error(err)
-//   }
-// }
+const { weatherList } = useWeatherList()
 </script>
 
 <style lang="scss">

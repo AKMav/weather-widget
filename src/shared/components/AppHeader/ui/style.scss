@@ -1,14 +1,13 @@
 .weather-app-header {
   padding: 12px;
-  min-height: 30px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
 
   &__title {
-    color: var(--text-color);
+    color: var(--primary);
     font-size: 24px;
     text-align: center;
     margin: 0;
+    padding-bottom: 24px;
   }
 }
