@@ -1,10 +1,12 @@
+@import '@/shared/styles/theme.scss';
+
 .weather-app-header {
   padding: 12px;
   display: flex;
   flex-direction: column;
 
   &__title {
-    color: var(--primary);
+    color: $primary;
     font-size: 24px;
     text-align: center;
     margin: 0;

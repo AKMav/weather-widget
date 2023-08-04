@@ -1,6 +1,6 @@
 <template>
   <div class="weather-app">
-    <AppHeader :header-title="'Weather widget'">
+    <AppHeader header-title="Weather widget">
       <LocationAdd />
     </AppHeader>
     <WeatherList v-if="weatherList.length">

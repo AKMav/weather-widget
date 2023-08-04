@@ -1,3 +1,5 @@
+@import '@/shared/styles/theme.scss';
+
 .weather-card {
   width: 100%;
 
@@ -11,7 +13,7 @@
   &__title {
     margin: 0;
     font-size: 16px;
-    color: var(--primary);
+    color: $primary;
   }
 
   &__row {
@@ -32,7 +34,7 @@
   }
 
   &__temp {
-    color: var(--secondary);
+    color: $secondary;
     font-size: 24px;
     font-weight: 700;
     margin: 0;
@@ -49,12 +51,12 @@
     }
 
     &__title {
-      color: var(--primary);
+      color: $primary;
       font-size: 18px;
     }
 
     &__subtitle {
-      color: var(--secondary);
+      color: $secondary;
       font-size: 14px;
       font-weight: normal;
     }
@@ -65,12 +67,12 @@
     &__title {
       margin: 0;
       font-size: 16px;
-      color: var(--primary);
+      color: $primary;
     }
 
     &__value {
       font-size: 14px;
-      color: var(--secondary);
+      color: $secondary;
       margin-bottom: 4px;
     }
   }
@@ -82,10 +84,10 @@
   .weather-params {
     text-align: center;
     &__info {
-      color: var(--text-color);
+      color: $text-color;
 
       em {
-        color: var(--secondary);
+        color: $secondary;
         font-weight: 700;
       }
     }
