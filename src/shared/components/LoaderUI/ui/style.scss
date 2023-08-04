@@ -1,3 +1,5 @@
+@import '@/shared/styles/theme.scss';
+
 .loader {
   width: 44px;
   height: 44px;
@@ -11,7 +13,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: var(--primary);
+    background: $primary;
     position: absolute;
     left: 0;
     top: 0;

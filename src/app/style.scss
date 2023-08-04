@@ -1,7 +1,7 @@
 @import '@/shared/styles/theme.scss';
 
 .weather-app {
-  background-color: var(--background);
+  background-color: $background;
   font-family: Arial, Helvetica, sans-serif;
   max-width: 600px;
   margin: 0 auto;
