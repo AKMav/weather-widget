@@ -24,15 +24,14 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { useGeolocation } from '@vueuse/core'
-import { watchDebounced } from '@vueuse/core'
+import { ref } from 'vue'
+import { useGeolocation, watchOnce, watchDebounced } from '@vueuse/core'
 import SearchIcon from '@/shared/icons/SearchIcon'
 import LoaderUI from '@/shared/components/LoaderUI'
-import type { ICoordinate } from '@/shared/types'
 import { useSearchLocation } from '../model'
 
 const isInputFocused = ref(false)
+const { coords } = useGeolocation()
 const { query, weatherItemData, loading, error, fetchWeather, addFetchedItem } = useSearchLocation()
 
 watchDebounced(
@@ -43,21 +42,9 @@ watchDebounced(
   { debounce: 750 }
 )
 
-onMounted(async () => {
-  const { coords: userCoordinates } = useGeolocation()
-
-  // value of longitude and latitude is may have an Infinity type
-  if (
-    userCoordinates.value.longitude &&
-    isFinite(userCoordinates.value.longitude) &&
-    userCoordinates.value.latitude &&
-    isFinite(userCoordinates.value.latitude)
-  ) {
-    const payload: ICoordinate = {
-      lon: userCoordinates.value.longitude,
-      lat: userCoordinates.value.latitude
-    }
-    await fetchWeather({ coordinate: payload })
+watchOnce(coords, async ({ latitude: lat, longitude: lon }) => {
+  if (lat && lon) {
+    await fetchWeather({ coordinate: { lon, lat } })
     addFetchedItem(weatherItemData.value)
   }
 })
