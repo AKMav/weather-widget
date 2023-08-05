@@ -2,6 +2,7 @@ import { ref } from 'vue'
 import { useWeatherList } from '@/entities/WeatherList'
 import type { IResponse } from '@/shared/types'
 import { getWeatherByQuery, getWeatherByCoordinate } from '@/shared/api/GetWeather'
+import { hasCollectionItem } from '@/shared/utils/hasCollectionItem'
 import type { IFetchParams } from '../types'
 
 const query = ref('')
@@ -48,11 +49,11 @@ export const useSearchLocation = () => {
   }
 
   const addFetchedItem = (payload: IResponse | null) => {
-    if (payload && weatherList.value.findIndex((item) => item.id === payload.id) === -1) {
+    if (payload && !hasCollectionItem(weatherList.value, payload)) {
       addWeatherItem(payload)
-      weatherItemData.value = null
-      query.value = ''
     }
+    query.value = ''
+    weatherItemData.value = null
   }
 
   return {
