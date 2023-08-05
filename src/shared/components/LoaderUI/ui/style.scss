@@ -1,17 +1,25 @@
 @import '@/shared/styles/theme.scss';
 
 .loader {
-  width: 44px;
-  height: 44px;
+  width: 60px;
+  height: 60px;
   display: inline-block;
   position: relative;
+
+  &__wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   &::after,
   &::before {
     content: '';
     box-sizing: border-box;
-    width: 44px;
-    height: 44px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: $primary;
     position: absolute;
