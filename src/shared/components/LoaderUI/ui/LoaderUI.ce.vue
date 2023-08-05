@@ -1,5 +1,7 @@
 <template>
-  <span class="loader"></span>
+  <div class="loader__wrapper">
+    <span class="loader"></span>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
