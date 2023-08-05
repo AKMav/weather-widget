@@ -5,11 +5,35 @@
   display: flex;
   flex-direction: column;
 
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+  }
+
   &__title {
+    flex: 1 0 auto;
     color: $primary;
     font-size: 24px;
     text-align: center;
     margin: 0;
-    padding-bottom: 24px;
+    padding: 0;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: -10px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: $text-muted;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+    }
   }
 }
