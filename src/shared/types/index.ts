@@ -39,3 +39,8 @@ export interface IResponse {
     speed: number
   }
 }
+
+export interface ICoordinate {
+  lon: number
+  lat: number
+}
