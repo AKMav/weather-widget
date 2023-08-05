@@ -1,5 +1,5 @@
 <template>
-  <AppHeader header-title="Weather widget" @on-settings-open="openSetting">
+  <AppHeader header-title="Weather widget" @on-setting-click="emits('onToggleSetting')">
     <LocationAdd />
   </AppHeader>
   <WeatherList v-if="weatherList.length">
@@ -23,5 +23,5 @@ import AppHeader from '@/shared/components/AppHeader'
 import EmptyData from '@/shared/components/EmptyData'
 
 const { weatherList } = useWeatherList()
-const openSetting = () => console.log('open settings')
+const emits = defineEmits(['onToggleSetting'])
 </script>
