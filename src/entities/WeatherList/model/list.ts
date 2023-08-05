@@ -10,7 +10,7 @@ watch(weatherList, (newList) => {
 
 export const useWeatherList = () => {
   const addWeatherItem = (payload: IResponse) => {
-    weatherList.value = [...weatherList.value, payload]
+    weatherList.value = [payload, ...weatherList.value]
   }
 
   const removeWeatherItem = (id: number) => {

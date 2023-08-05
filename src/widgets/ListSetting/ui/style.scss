@@ -1,0 +1,76 @@
+@import '@/shared/styles/theme.scss';
+
+.setting-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__wrapper {
+    position: absolute;
+    border-radius: 8px;
+    width: 300px;
+    left: calc(50% - 150px);
+    z-index: 10;
+    padding: 24px;
+    background-color: $white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: $text-color;
+    margin: 0;
+  }
+
+  &__close-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+    margin: -10px;
+    color: $text-muted;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__item {
+    padding: 8px 12px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    color: $primary;
+    gap: 16px;
+  }
+
+  &__burger-icon {
+    cursor: grabbing;
+    color: $text-muted;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+  }
+}
