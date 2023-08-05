@@ -26,10 +26,16 @@
     background-color: transparent;
     font-size: 16px;
 
-    &:focus {
+    &:focus:not(.danger) {
       border-color: $secondary;
       box-shadow: $shadow-primary 0px 0px 0px 3px;
       background-color: $white;
+    }
+
+    &.danger {
+      border-color: $error;
+      color: $error;
+      text-decoration: wavy;
     }
   }
 

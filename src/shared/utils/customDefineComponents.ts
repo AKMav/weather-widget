@@ -20,7 +20,7 @@ export const defineCustomElement = (component: Component) =>
 
       app.mixin({
         mounted() {
-          const insertStyles = (styles: any) => {
+          const insertStyles = (styles: string[]) => {
             if (styles?.length) {
               this.__style = document.createElement('style')
               this.__style.innerText = styles.join().replace(/\n/g, '')
