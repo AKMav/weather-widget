@@ -39,7 +39,7 @@ watchDebounced(
   (newQuery) => {
     fetchWeather({ query: newQuery })
   },
-  { debounce: 750 }
+  { debounce: 1000 }
 )
 
 watchOnce(coords, async ({ latitude: lat, longitude: lon }) => {
